@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App/>
+    {/* <TypeCell type="2134" page="31" labelCount="123" bgColor="red"/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
