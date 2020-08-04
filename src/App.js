@@ -6,6 +6,11 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 let colorOptions = ["green", "yellow","orange","pink","magenta","red","salmon", "mediumseagreen", "slateblue", "maroon", "aquamarine", "purple"];
+// Fazla sayfada sayfaları grupla
+// Sayfa state'ine göre o sub-arrayi yükle
+// Alt butonlarda 1 önce, sonra en baş en son göster.
+// Go To Page'i ? 
+// State'e payload ekle (farkları pushlamak için)
 
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +48,7 @@ class App extends React.Component {
           
         </div>
       <div className="cont">
-        {}
+        
         <div className="row">
           <div className="column">
             <img src={logo} className="App-logo" alt="logo" />
@@ -69,7 +74,9 @@ class App extends React.Component {
             <img src={logo} className="App-logo" alt="logo" />
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-          
+          <input type="button" value="12" style={{display:'inline-block',bottom:'0', height:"20px"}}/>
+          <input type="button" value="12" style={{display:'inline-block',bottom:'0', height:"20px"}}/>
+          <input type="button" value="12" style={{display:'inline-block',bottom:'0', height:"20px"}}/>
         </div>
         <div className="dashboard clearfix">
           <div className="center-items">
@@ -88,6 +95,8 @@ class App extends React.Component {
 
 
         </div>
+        
+    
       </div>
       </div>
     );
