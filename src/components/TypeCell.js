@@ -4,8 +4,12 @@ import './TypeCell.css';
 class DataType extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { 
+            checked: false
+        }
     }
     render() {
+        const { checked } = this.state;
         let circleStyle = {
             padding: "10px",
             margin: "auto",
@@ -14,6 +18,7 @@ class DataType extends React.Component {
             borderRadius: "50%",
             width: "25px",
             height: "25px",
+            cursor: "pointer"
         };
         return (
             <div className='container'>
@@ -25,7 +30,12 @@ class DataType extends React.Component {
                 <input className="form-component" type="text" value={this.props.page} />
                 <br />
                 <span className="form-component">{this.props.labelCount} docs labeled</span>
-                <div style={circleStyle}><input type="checkbox" className="customcb"/></div>
+                <div style={circleStyle} onClick={() => { this.setState({checked: !checked }) }}>
+                    
+                    {/* <input type="checkbox" className="customcb"/> */}
+                </div>
+                {(checked ? "Selected" : "" ) }
+
 
             </div>
         );

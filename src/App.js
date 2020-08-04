@@ -5,6 +5,8 @@ import TypeCell from './components/TypeCell';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
+let colorOptions = ["green", "yellow","orange","pink","magenta","red","salmon", "mediumseagreen", "slateblue", "maroon", "aquamarine", "purple"];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -24,13 +26,21 @@ class App extends React.Component {
     return (
       <div>
       <div className="project-header">
-          <label style={{float:"left", marginTop: "5px", marginRight:"5px", marginLeft: "10px"}}>Project:</label>
-          <Dropdown 
-            options={this.state.projects}
-            onChange={this._onSelect} 
-            menuClassName='quarter-width' 
-            className='quarter-width'
-            placeholder="Select an option" />;
+        <div>
+            <label style={{ float: "left", marginTop: "8px", marginRight: "5px", marginLeft: "10px", width: "5%" }}>Project:</label>
+            <Dropdown
+              options={this.state.projects}
+              onChange={this._onSelect}
+              menuClassName='quarter-width'
+              className='quarter-width'
+              placeholder="Select an option"
+            />
+          </div>
+          <div style={{marginTop:"15px", marginBottom:"10px"}}>
+            <label style={{ width: "5%", marginRight: "5px" }}> Draft Name </label>
+            <input type="text" className="quarter-width" placeholder="Draft Name"></input>
+          </div>
+          
         </div>
       <div className="cont">
         {}
@@ -63,10 +73,12 @@ class App extends React.Component {
         </div>
         <div className="dashboard clearfix">
           <div className="center-items">
-            <input type="button" value="Create New Type" style={{ marginTop: "20px" }}/> 
+            <span style={{marginBottom:"15px"}}>Class Types</span>
+            {/* <input type="button" value="Create New Type" style={{ marginTop: "20px" }}/>  */}
             
             {classTypes.map( item => {
-              return (<TypeCell type={item[0]} page={item[1]} labelCount="123" bgColor="red" className="type-cell" />)
+              let color = colorOptions[classTypes.indexOf(item) % 12];
+              return (<TypeCell type={item[0]} page={item[1]} labelCount="123" bgColor={color} className="type-cell" />)
             })}
 
             

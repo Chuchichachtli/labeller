@@ -14,14 +14,15 @@
     margin-bottom: 3px;
 }
 
-input[type="text"]{
+
+.container input[type="text"]{
     border: 2px solid peru;
     border-radius: 4px;
 }
-input[type="text"]:focus {
+.container input[type="text"]:focus {
     background-color: lightblue;
 } 
-input[type="checkbox"]{
+.container input[type="checkbox"]{
     border-radius: 100%;
     cursor: pointer;
 }

@@ -4,12 +4,13 @@
   padding: 0 4px;
   width: 80%;
   left: 0;
-  border: magenta 10px;
+  border: black 3px;
   border-style: solid;
+  border-radius: 20px;
 
 }
 .type-cell{
-  margin-top: 100px;
+  margin-bottom: 20px;
 
 }
 .project-header { 
@@ -17,14 +18,16 @@
   display: block;
 }
 .center-items {
-  padding-top: 1000px;
+  padding-top: 1200px;
   align-items: center;
   justify-content: center;
   list-style-position: inside;
+  text-align: center;
 }
 .cont { 
-  border: #61dafb 10px;
-  background-color: blueviolet;
+  border: white 10px;
+  background-color: #C0C0C0	;
+  border-radius: 20px;
   border-style: solid;
   display: flex;
   position: relative;
@@ -33,7 +36,7 @@
   flex: 25%;
   align-items: center;
   justify-content: center;
-  background-color: palegoldenrod;
+  /* background-color: palegoldenrod; */
 }
 .dashboard { 
   padding-top: 100px;
@@ -42,7 +45,7 @@
   right: 0;
   display: inline-flex;
   width: 20%;
-  background-color: red;
+  /* background-color: red; */
   align-items: center;
   justify-content: center;
   max-height: 850px;
@@ -62,7 +65,7 @@
   align-items: center ; /*mb delete*/
 }
 .quarter-width {
-  width: 25%;
+  width: 20%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -94,3 +97,10 @@
 .nav-button {
   display: inline-block;
 }
+input[type="text"]{
+  border: 0.3px solid lightgray;
+  height : 21px;
+}
+input[type="text"]:focus {
+
+} 
