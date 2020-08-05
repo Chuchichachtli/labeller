@@ -136,7 +136,6 @@ class App extends React.Component {
 
         </div>
         <div className="cont">
-
           <div className="row">
             <div className="column">
               <ImageCell documentName={documentList[0] ? documentList[0][1] : null} image={documentList[0][0]} colour={docState['0'] ? docState['0'].color : "null"} id="0" labelClick={this.documentClick} />
@@ -193,9 +192,12 @@ class App extends React.Component {
                 type="button"
                 className="add-button"
                 value="Save"
-                onClick={() => { console.log("send Payload") }}
+                onClick={() => { console.log("Send Payload") }}
                 style={{marginTop:"-20px"}}
               />
+              
+              { currentTypeId !== "" ? 
+              <><br/> <span>Selected: Document {classTypes[currentTypeId][0] + " Page " + classTypes[currentTypeId][1] }</span></> : null } 
               <br/>
               
               <input
