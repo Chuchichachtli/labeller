@@ -6,7 +6,8 @@ class Popup extends React.Component {
         super(props);
         this.state = {
             newPage: "",
-            newType: ""
+            newType: "",
+            error: false
         }
 
     }
@@ -20,8 +21,9 @@ class Popup extends React.Component {
     }
 
     render() {
-        const { addNewType } = this.props;
-        const {newPage, newType} = this.state
+        const errorMessage = "Please fill all areas!";
+
+        const {newPage, newType, error} = this.state
         return (
             <div className='popup clearfix'>
                 <div className="popup-header">
@@ -43,11 +45,18 @@ class Popup extends React.Component {
                     value="Save"
                     className="popup-button"
                     onClick={() => {
-                        if (newPage !== "" && newType !== "") { this.props.addNewType(newType, newPage) }
-                        this.setState({ newPage: "", newType: "" });
-                        this.props.closePopup();
+                        if (newPage !== "" && newType !== "") { 
+                            this.props.addNewType(newType, newPage) 
+                            this.setState({ newPage: "", newType: "" });
+                            this.props.closePopup();
+                        }else { 
+                            this.setState({error : true});
+                        }
                     }}
                 />
+
+
+                {error ? <><br/><span className="error-msg">{errorMessage}</span></> : null}
 
             </div>
         );
