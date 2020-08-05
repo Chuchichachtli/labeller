@@ -10,6 +10,24 @@
   align-items: center;
   justify-content: center;
 }
+.add-button {
+  border: peru 1px solid;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: wheat;
+  outline: none;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.add-button:active {
+  background-color: peru;
+}
+.add-button:focus {
+  border: none;
+}
+
 .type-cell{
   margin-bottom: 20px;
 

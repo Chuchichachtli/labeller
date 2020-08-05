@@ -24,10 +24,10 @@ class DataType extends React.Component {
             <div className='container'>
 
                 <label className="form-component">Class Type</label>
-                <input className="form-component" type="text" value={this.props.type} />
+                <input className="form-component" type="text" value={this.props.type} disabled />
                 <br />
                 <label className="form-component">Page Number</label>
-                <input className="form-component" type="text" value={this.props.page} />
+                <input className="form-component" type="text" value={this.props.page} disabled />
                 <br />
                 <span className="form-component">{this.props.labelCount} docs labeled</span>
                 <div style={circleStyle} onClick={() => { this.setState({checked: !checked }) }}>
