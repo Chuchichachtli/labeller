@@ -3,14 +3,13 @@ import './ImageCell.css';
 
 const ImageCell = (props) => {
     
-    const { color, documentName, image } = props;
+    const { colour, documentName, image, id } = props;
        
 
         return (
-            <div className='document-container' style={{ borderColor: color }}>
+            <div className='document-container' style={{ borderColor: colour }} onClick={() => {props.labelClick(id, documentName) }}>
                  <img src={image} className="document" alt={documentName} />
-                <span className="document-name" style={{color: color}}>{documentName}</span>
-
+                <span className="document-name" style={{color: colour}}>{documentName}</span>
             </div>
         );
     

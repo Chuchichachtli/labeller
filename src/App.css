@@ -67,7 +67,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height:1000px !important;
+  /* height:1000px !important; */
+  min-height: 1400px;
 }
 .dashboard {
   padding: 50px 0;
@@ -78,10 +79,9 @@
   /* background-color: red; */
   align-items: center;
   justify-content: center;
-  /* max-height: 1000px; */
   min-height: 500px;
   min-width: 250px;
-  height:10 00px !important;
+  /* height:10 00px !important; */
   overflow-wrap: normal;
   overflow-y: scroll;
   border-radius: 30px;
