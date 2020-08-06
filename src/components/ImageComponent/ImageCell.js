@@ -9,7 +9,7 @@ const ImageCell = (props) => {
         return (
             <div className='document-container' style={{ borderColor: colour }} onClick={() => {props.labelClick(id, documentName) }}>
                  <img src={image} className="document" alt={documentName} />
-                <span className="document-name" style={{color: colour}}>{documentName}</span>
+                <span className="document-name" style={{color: colour}}>{documentName}</span> <br/>
             </div>
         );
     

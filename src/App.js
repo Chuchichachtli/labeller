@@ -19,23 +19,38 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      classTypes: [[1, 1], [2, 2], [3, 3], [123, 5], [33, 99], [1233, 12], [99, 0], [90, 60], [90, 61], [90, 62]], //mock
-      projects: ['abc', 'her ile 1 okul', 'denizbank', 'denizci'],
-      showCreatePopup: false,
-      typeState: 1,
-      maxTypeState: Infinity,
-      currentTypeId: "",
-      currentColour: "",
+      classTypes: [[1, 1], [2, 2], [3, 3], [123, 5], [33, 99], [1233, 12], [99, 0], [90, 60], [90, 61], [90, 62]], // types
+      projects: ['abc', 'her ile 1 okul', 'denizbank', 'denizci'],   //Projects (for dropdown menu up top)
+      showCreatePopup: false, //show or hide type creation popup
+      typeState: 1, // current page in types
+      maxTypeState: Infinity, // How many pages there are in the types area.
+      currentTypeId: "", //current id of selected type
+      currentColour: "", //current colour of selected type
       documentList: [[doc1, "KVKKPage1"], [doc1, "KVKK Page 2"], [doc1, "KVKK Page 3"], [doc1, "KVKK Page 4"], [doc1, "KVKK Page 5"],
       [doc1, "KVKK Page 6"], [doc1, "KVKK Page 7"], [doc1, "KVKK Page 8"], [doc1, "KVKK Page 9"],
       [doc1, "KVKK Page 10"], [doc1, "KVKK Page 11"], [doc1, "KVKK Page 12"], [doc1, "KVKK Page 13"],
-      [doc1, "KVKK Page 14"], [doc1, "KVKK Page 15"], [doc1, "KVKK Page 16"]],
-      payload: [],
-      docState: {}
-
+      [doc1, "KVKK Page 14"], [doc1, "KVKK Page 15"], [doc1, "KVKK Page 16"]], // document images and their names (comes from BE)
+      payload: [], // What to send 
+      docState: {} // To show changes in the UI
+      //docs labeled icin back-end'den sayi gelmeli
     }
+  }
+// Clear all current labels
+  clearAllLabels = () => {
+    const { payload, docState } = this.state;
+    let newPayload = payload;
+    let newDocState = docState;
+
+    for(const x in newDocState ){
+      newDocState[x].color = "black";
+      newDocState[x].type = "-1";
+    }
+    newPayload = [];
+    this.setState({payload: newPayload, docState:newDocState});
+    console.log(newDocState, payload)
 
   }
+  // Label documents when clicked on with a valid type
   documentClick = (id, docName) => {
     const { currentTypeId, currentColour, docState, payload, classTypes } = this.state;
     let newDocState = docState;
@@ -53,18 +68,14 @@ class App extends React.Component {
         } else {
           newDocState[strId].color = 'black';
           newDocState[strId].type = '-1';
-
         }
       } else {
         newDocState[strId] = { color: currentColour, type: currentTypeId };
-
       }
       for (let i = 0; i < newPayload.length; i++) {
-        console.log(newPayload[i], "guck", classTypes[currentTypeId], docName)
         if (newPayload[i][0] === docName && newPayload[i][1] !== classTypes[currentTypeId]) { different = true; inPayload = true; }
         else if (newPayload[i][0] === docName && newPayload[i][1] === classTypes[currentTypeId]) { inPayload = true; }
       }
-      console.log(different)
       if (different && inPayload) {
         for (let i = 0; i < newPayload.length; i++) {
 
@@ -83,15 +94,17 @@ class App extends React.Component {
           }
         }
       }
-
       if (!inPayload) { newPayload.push([docName, classTypes[currentTypeId]]); }
-      console.log(newPayload);
       this.setState({ docState: newDocState, payload: newPayload });
     }
   }
 
   setType = (key, colour) => {
-    this.setState({ currentTypeId: key, currentColour: colour });
+    if (this.state.currentTypeId !== key) {
+      this.setState({ currentTypeId: key, currentColour: colour });
+    } else {
+      this.setState({ currentTypeId: "", currentColour: "black" });
+    }
   }
 
   closePopup = () => {
@@ -133,7 +146,6 @@ class App extends React.Component {
             <label style={{ width: "5%", marginRight: "5px" }}> Draft Name </label>
             <input type="text" className="quarter-width" placeholder="Draft Name"></input>
           </div>
-
         </div>
         <div className="cont">
           <div className="row">
@@ -193,13 +205,21 @@ class App extends React.Component {
                 className="add-button"
                 value="Save"
                 onClick={() => { console.log("Send Payload") }}
-                style={{marginTop:"-20px"}}
+                style={{ marginTop: "-20px" }}
               />
-              
-              { currentTypeId !== "" ? 
-              <><br/> <span>Selected: Document {classTypes[currentTypeId][0] + " Page " + classTypes[currentTypeId][1] }</span></> : null } 
               <br/>
-              
+              <input
+                type="button"
+                className="add-button"
+                value="Clear All Labels"
+                onClick={() => { this.clearAllLabels(); }}
+                style={{ marginTop: "-20px" }}
+              />
+
+              {currentTypeId !== "" ?
+                <><br /> <span>Selected: Document {classTypes[currentTypeId][0] + " Page " + classTypes[currentTypeId][1]}</span></> : null}
+              <br />
+
               <input
                 type="button"
                 className="add-button"

@@ -11,18 +11,19 @@
   justify-content: center;
 }
 .add-button {
-  border: peru 1px solid;
+  border: #662d91 1px solid;
   border-style: solid;
   border-radius: 5px;
   cursor: pointer;
-  background-color: wheat;
+  background-color: #dddddd;
   outline: none;
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .add-button:active {
-  background-color: peru;
+  background-color: #662d91;
+  color: white;
 }
 .add-button:focus {
   border: none;
@@ -50,7 +51,7 @@
 }
 .cont { 
   border: white 10px;
-  background-color: #C0C0C0	;
+  background-color: #bcccd0	;
   border-radius: 20px;
   border-style: solid;
   display: flex;

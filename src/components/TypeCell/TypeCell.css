@@ -1,11 +1,11 @@
 .container {
-    border: 4px peru;
+    border: 4px #662d91;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 5px;
     max-width: 200px;
     text-align: center;
     padding: 10px;
-    background-color: bisque;
+    background-color: #dddddd;
     list-style-position: inside;
     margin-bottom: 10px;
 }
@@ -17,8 +17,9 @@
 
 
 .container input[type="text"]{
-    border: 2px solid peru;
+    border: 2px solid #662d91;
     border-radius: 4px;
+    background-color: #f3f3f3;
 }
 .container input[type="text"]:focus {
     background-color: lightblue;
