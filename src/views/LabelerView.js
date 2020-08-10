@@ -33,9 +33,7 @@ class LabelView extends React.Component {
       currentTypeId: "", //current id of selected type
       currentColour: "", //current colour of selected type
       documentList: [[doc1, "KVKKPage1"], [doc1, "KVKK Page 2"], [doc1, "KVKK Page 3"], [doc1, "KVKK Page 4"], [doc1, "KVKK Page 5"],
-      [doc1, "KVKK Page 6"], [doc1, "KVKK Page 7"], [doc1, "KVKK Page 8"], [doc1, "KVKK Page 9"],
-      [doc1, "KVKK Page 10"], [doc1, "KVKK Page 11"], [doc1, "KVKK Page 12"], [doc1, "KVKK Page 13"],
-      [doc1, "KVKK Page 14"], [doc1, "KVKK Page 15"], [doc1, "KVKK Page 16"]], // document images and their names (comes from BE)
+      [doc1, "KVKK Page 6"], [doc1, "KVKK Page 7"]], // document images and their names (comes from BE)
       payload: [], // What to send 
       docState: {} // To show changes in the UI
       //docs labeled icin back-end'den sayi gelmeli
@@ -159,28 +157,28 @@ class LabelView extends React.Component {
           <div className="cont">
             <div className="all-rows">
               <div className="custom-column">
-                <ImageCell documentName={documentList[0] ? documentList[0][1] : null} image={documentList[0][0]} colour={docState['0'] ? docState['0'].color : "null"} id="0" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[1] ? documentList[1][1] : null} image={documentList[1][0]} colour={docState['1'] ? docState['1'].color : "null"} id="1" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[2] ? documentList[2][1] : null} image={documentList[2][0]} colour={docState['2'] ? docState['2'].color : "null"} id="2" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[3] ? documentList[3][1] : null} image={documentList[3][0]} colour={docState['3'] ? docState['3'].color : "null"} id="3" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[0] ? documentList[0][1] : null} image={documentList[0] ? documentList[0][0] : null} colour={docState['0'] ? docState['0'].color : "null"} id="0" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[1] ? documentList[1][1] : null} image={documentList[1] ? documentList[1][0] : null} colour={docState['1'] ? docState['1'].color : "null"} id="1" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[2] ? documentList[2][1] : null} image={documentList[2] ? documentList[2][0] : null} colour={docState['2'] ? docState['2'].color : "null"} id="2" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[3] ? documentList[3][1] : null} image={documentList[3] ? documentList[3][0] : null} colour={docState['3'] ? docState['3'].color : "null"} id="3" labelClick={this.documentClick} />
               </div>
               <div className="custom-column">
-                <ImageCell documentName={documentList[4] ? documentList[4][1] : null} image={documentList[4][0]} colour={docState['4'] ? docState['4'].color : "null"} id="4" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[5] ? documentList[5][1] : null} image={documentList[5][0]} colour={docState['5'] ? docState['5'].color : "null"} id="5" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[6] ? documentList[6][1] : null} image={documentList[6][0]} colour={docState['6'] ? docState['6'].color : "null"} id="6" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[7] ? documentList[7][1] : null} image={documentList[7][0]} colour={docState['7'] ? docState['7'].color : "null"} id="7" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[4] ? documentList[4][1] : null} image={documentList[4] ? documentList[4][0] : null} colour={docState['4'] ? docState['4'].color : "null"} id="4" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[5] ? documentList[5][1] : null} image={documentList[5] ? documentList[5][0] : null} colour={docState['5'] ? docState['5'].color : "null"} id="5" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[6] ? documentList[6][1] : null} image={documentList[6] ? documentList[6][0] : null} colour={docState['6'] ? docState['6'].color : "null"} id="6" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[7] ? documentList[7][1] : null} image={documentList[7] ? documentList[7][0] : null} colour={docState['7'] ? docState['7'].color : "null"} id="7" labelClick={this.documentClick} />
               </div>
               <div className="custom-column">
-                <ImageCell documentName={documentList[8] ? documentList[8][1] : null} image={documentList[8][0]} colour={docState['8'] ? docState['8'].color : "null"} id="8" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[9] ? documentList[9][1] : null} image={documentList[9][0]} colour={docState['9'] ? docState['9'].color : "null"} id="9" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[10] ? documentList[10][1] : null} image={documentList[10][0]} colour={docState['10'] ? docState['10'].color : "null"} id="10" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[11] ? documentList[11][1] : null} image={documentList[11][0]} colour={docState['11'] ? docState['11'].color : "null"} id="11" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[8] ? documentList[8][1] : null} image={documentList[8] ? documentList[8][0] : null} colour={docState['8'] ? docState['8'].color : "null"} id="8" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[9] ? documentList[9][1] : null} image={documentList[9] ? documentList[9][0] : null} colour={docState['9'] ? docState['9'].color : "null"} id="9" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[10] ? documentList[10][1] : null} image={documentList[10] ? documentList[10][0] : null} colour={docState['10'] ? docState['10'].color : "null"} id="10" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[11] ? documentList[11][1] : null} image={documentList[11] ? documentList[11][0] : null} colour={docState['11'] ? docState['11'].color : "null"} id="11" labelClick={this.documentClick} />
               </div>
               <div className="custom-column">
-                <ImageCell documentName={documentList[12] ? documentList[12][1] : null} image={documentList[12][0]} colour={docState['12'] ? docState['12'].color : "null"} id="12" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[13] ? documentList[13][1] : null} image={documentList[13][0]} colour={docState['13'] ? docState['13'].color : "null"} id="13" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[14] ? documentList[14][1] : null} image={documentList[14][0]} colour={docState['14'] ? docState['14'].color : "null"} id="14" labelClick={this.documentClick} />
-                <ImageCell documentName={documentList[15] ? documentList[15][1] : null} image={documentList[15][0]} colour={docState['15'] ? docState['15'].color : "null"} id="15" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[12] ? documentList[12][1] : null} image={documentList[12] ? documentList[12][0] : null} colour={docState['12'] ? docState['12'].color : "null"} id="12" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[13] ? documentList[13][1] : null} image={documentList[13] ? documentList[13][0] : null} colour={docState['13'] ? docState['13'].color : "null"} id="13" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[14] ? documentList[14][1] : null} image={documentList[14] ? documentList[14][0] : null} colour={docState['14'] ? docState['14'].color : "null"} id="14" labelClick={this.documentClick} />
+                <ImageCell documentName={documentList[15] ? documentList[15][1] : null} image={documentList[15] ? documentList[15][0] : null} colour={docState['15'] ? docState['15'].color : "null"} id="15" labelClick={this.documentClick} />
               </div>
 
               <input
