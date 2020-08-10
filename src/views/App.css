@@ -1,4 +1,4 @@
-.row {
+.all-rows {
   display: inline-flex;
   flex-wrap: wrap;
   padding: 0 4px;
@@ -51,13 +51,13 @@
 }
 .cont { 
   border: white 10px;
-  background-color: #bcccd0	;
+  background-color: #bcccd0 ;
   border-radius: 20px;
   border-style: solid;
   display: flex;
   position: relative;
 }
-.column {
+.custom-column {
   flex: 25%;
   align-items: center;
   justify-content: center;

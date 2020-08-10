@@ -1,7 +1,7 @@
 .popup {
     position: absolute;
     margin: auto;
-    height: 40%;
+    height: 25%;
     width: 30%;
     border: 3px solid silver;
     border-radius: 20px;
@@ -14,7 +14,7 @@
 }
 
 .popup-form {
-    margin: 5px;   
+    margin: 15px 5px 5px 5px;   
 }
 .popup-input { 
     background-color: #bdb6b6;
@@ -72,7 +72,7 @@
     border-top-right-radius: 5px;
     padding-top: 10px;
   }
-  .popup-header h3 {
+  .popup-header h4 {
     color: #fff;
     float: left;
     margin: -2px 0 0 10px;

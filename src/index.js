@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Labeled from './views/LabeledView';
 import * as serviceWorker from './serviceWorker';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-    {/* <TypeCell type="2134" page="31" labelCount="123" bgColor="red"/> */}
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

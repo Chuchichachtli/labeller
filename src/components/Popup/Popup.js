@@ -27,7 +27,7 @@ class Popup extends React.Component {
         return (
             <div className='popup clearfix'>
                 <div className="popup-header">
-                    <h3 className=''>Add New Document Type</h3>
+                    <h4 className=''>Add New Document Type</h4>
                     <input type="button" value="X" className="top-right close-button" onClick={this.props.closePopup}/>
 
                 </div>
