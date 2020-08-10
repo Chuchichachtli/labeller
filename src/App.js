@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import LabelView from "./views/LabelerView";
 import Labeled from "./views/LabeledView";
 import ErrorView from "./views/ErrorView";

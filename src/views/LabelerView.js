@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
 import TypeCell from '../components/TypeCell/TypeCell';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Popup from '../components/Popup/Popup';
-import Labeled from "./LabeledView";
 import Dropdown from 'react-dropdown';
 import ImageCell from '../components/ImageComponent/ImageCell';
 import 'react-dropdown/style.css';

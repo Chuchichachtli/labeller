@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CustomFooter.css';
 function Footer(props) {
-
-
-
-
     const { onClickForward, onClickBackward } = props;
 
     return (
@@ -13,13 +9,13 @@ function Footer(props) {
                 type="button"
                 className="add-button"
                 value="<"
-                onClick={console.log()}
+                onClick={() => { onClickBackward() }}
             />
             <input
                 type="button"
                 className="add-button"
                 value=">"
-                onClick={console.log()}
+                onClick={() => { onClickForward() }}
             />
         </footer>
     );
