@@ -12,11 +12,10 @@ const ImageCell = (props) => {
         {image ? (
             <div className='document-container'
             style={divStyle}
-            onClick={() => { props.labelClick(id, documentName) }}
+            onClick={() => {!savedDocument ? props.labelClick(id, documentName) : props.selectDocument(id, colour, documentName)  }}
         >
-            
             <img src={image} className="document" alt={documentName} />
-            <span className="document-name" style={{ color: colour }}>{documentName}</span> <br />
+            <span className="document-name" style={{ color: (colour ? colour : "black") }} > {documentName}</span> <br />
             {savedDocument ? <span>{documentType}</span> : null}
             </div>
         ) : null}
