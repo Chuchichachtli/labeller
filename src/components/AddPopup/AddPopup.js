@@ -1,7 +1,7 @@
 import React from 'react';
 import './Popup.css';
 
-class Popup extends React.Component {
+class AddPopup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,6 @@ class Popup extends React.Component {
             newType: "",
             error: false
         }
-
     }
 
     handleChangeType = (e) => {
@@ -63,4 +62,4 @@ class Popup extends React.Component {
     }
 }
 
-export default Popup;
+export default AddPopup;

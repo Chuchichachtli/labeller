@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class NavigationBar extends Component {
-    render() {
+function NavigationBar(props) {
+
         return (
             <nav class="navbar navbar-expand-lg navbar-light bg-warning navbar-nav w-100  "> 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/">Labeling Page<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -19,7 +19,6 @@ class NavigationBar extends Component {
                 </div>
             </nav>
         );
-    }
 }
 
 export default NavigationBar;

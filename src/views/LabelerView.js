@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import TypeCell from '../components/TypeCell/TypeCell';
-import Popup from '../components/Popup/Popup';
+import AddPopup from '../components/AddPopup/AddPopup';
 import Dropdown from 'react-dropdown';
 import ImageCell from '../components/ImageComponent/ImageCell';
 import 'react-dropdown/style.css';
@@ -131,7 +131,7 @@ class LabelView extends React.Component {
         <div style={{paddingBottom:"100px"}}>
           
           {showCreatePopup ?
-            <Popup
+            <AddPopup
               closePopup={this.closePopup}
               addNewType={this.addType}
             />

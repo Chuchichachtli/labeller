@@ -5,3 +5,6 @@
     background-color: aqua;
     text-align: center;
 }
+input {
+    margin: 5px;
+}

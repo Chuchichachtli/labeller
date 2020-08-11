@@ -18,12 +18,13 @@ const ImageCell = (props) => {
             <span className="document-name" style={{ color: (colour ? colour : "black") }} > {documentName}</span> <br />
             {savedDocument ? <span>{documentType}</span> : null}
             </div>
-        ) : null}
+        ) 
+        : 
+        null
+        }
         
             </>
-        );
-            
-    
+        ); 
 }
 
 export default ImageCell;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import ImageCell from '../components/ImageComponent/ImageCell';
 import Footer from '../components/footerComponent/CustomFooter'
+import DeletePopup from "../components/deletePopup/DeletePopup";
 import Doc1 from '../doc1.jpg';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,7 +19,8 @@ class Labeled extends Component {
       { image: Doc1, name: "doc name6", label: "Sözleşme Page 1" }],
       chosen: [], //ids of chosen documents
       colourList: ["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"],
-      projects: ['abc', 'her ile 1 okul', 'denizbank', 'denizci']
+      projects: ['abc', 'her ile 1 okul', 'denizbank', 'denizci'],
+      showPopup:false
     }
   }
   docClick = (id, colour, docName) =>{
@@ -37,18 +39,41 @@ class Labeled extends Component {
   }
 
   render() {
-    const { docList, colourList } = this.state;
-    console.log(this.state.chosen)
+    const { docList, colourList, showPopup } = this.state;
+
     return (
+      <>
+      {
+          showPopup ? 
+          <DeletePopup
+            closePopup={() => { this.setState({showPopup:false}) }}
+          />
+          :
+          null
+        }
       <div>
+
         <NavigationBar />
+        
+        <div style={{width:"100%"}}>
         <Dropdown
-                options={this.state.projects}
-                onChange={this._onSelect}
-                menuClassName='quarter-width'
-                className='quarter-width'
-                placeholder="Select a project"
-              />
+          options={this.state.projects}
+          onChange={this._onSelect}
+          menuClassName='quarter-width'
+          className='quarter-width'
+          placeholder="Select a project"
+          />
+        <input
+          type="button"
+          className="add-button"
+          value="Delete All Labels in Project"
+          onClick={() => {
+            this.setState({showPopup: true})
+          }}
+          style={{ position:"absolute", top:"50px", right:"0" }}
+        />
+        </div>
+
         <div class="container-fluid container-dimensions">
           <div class="row">
             <div class="col-md">
@@ -210,9 +235,9 @@ class Labeled extends Component {
           </div>
 
         </div>
-        <Footer onClickForward={() => {console.log()}} onClickBackward={() => {console.log()} }/>
+        <Footer savedDocuments={true} onClickForward={() => {console.log()}} onClickBackward={() => {console.log()} }/>
       </div>
-
+</>
     );
   }
 }
